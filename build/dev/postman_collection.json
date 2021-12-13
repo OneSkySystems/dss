@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "79e3b318-f6f6-4bf0-ab47-a238f9aa47c7",
+		"_postman_id": "f469e42c-50b5-4d8a-a125-d590cfa4c843",
 		"name": "DSS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -17,7 +17,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "8ad58ff7-551b-4269-b4aa-50738b57e88f",
 										"exec": [
 											"var data = JSON.parse(responseBody);",
 											"postman.setEnvironmentVariable(\"read_isas_access_token\", data.access_token);",
@@ -68,7 +67,6 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "219e52bb-fc71-4f41-bfb7-bd1250d675c7",
 										"exec": [
 											"postman.setEnvironmentVariable(\"area\", \"19.4763,-155.6043,19.4884,-155.5746,19.4516,-155.5941\");",
 											"const moment = require('moment');",
@@ -126,7 +124,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "38485b1e-517a-4d6f-b67a-7f08f77a2c4a",
 										"exec": [
 											"var data = JSON.parse(responseBody);",
 											"postman.setEnvironmentVariable(\"write_isas_access_token\", data.access_token);",
@@ -177,7 +174,6 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "6a4ed5f3-285f-481d-b254-166c0484f402",
 										"exec": [
 											"const moment = require('moment');",
 											"pm.globals.set(\"timestamp_start\", moment().subtract(2, 'seconds').toISOString());",
@@ -190,7 +186,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "1928332c-b599-44b2-9b98-abf9134a4e80",
 										"exec": [
 											"tests[\"Status code is 200\"] = responseCode.code === 200;",
 											"",
@@ -245,7 +240,6 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "595fe95c-b13e-4b04-b1d7-a1689f655c97",
 										"exec": [
 											"const moment = require('moment');",
 											"pm.globals.set(\"timestamp_end\", moment().add(5, 'minutes').toISOString());",
@@ -257,7 +251,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "94b6321e-49ba-4c9e-9bf8-2b37b8975bdc",
 										"exec": [
 											"tests[\"Status code is 200\"] = responseCode.code === 200;",
 											"",
@@ -313,7 +306,6 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "3e5170e6-9155-42fd-91a6-499eedaf102d",
 										"exec": [
 											""
 										],
@@ -323,7 +315,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "9fa14992-b3f9-42d0-9a49-09f79b475a5c",
 										"exec": [
 											""
 										],
@@ -365,7 +356,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "5b1efa9a-9f7c-404e-8f83-77d216d0dbe7",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -375,16 +365,13 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ebc0bfcf-4d4c-45fc-9b4d-82ea8716a2a5",
 								"type": "text/javascript",
 								"exec": [
 									""
 								]
 							}
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "Subscriptions",
@@ -395,7 +382,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "737fe10d-ccf8-4e41-8564-fd2b5672bb4f",
 										"exec": [
 											"var data = JSON.parse(responseBody);",
 											"postman.setEnvironmentVariable(\"read_isas_access_token\", data.access_token);",
@@ -446,7 +432,6 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "cc98f5a5-78f0-4cac-b397-c247b78999d9",
 										"exec": [
 											"postman.setEnvironmentVariable(\"area\", \"19.4763,-155.6043,19.4884,-155.5746,19.4516,-155.5941\");",
 											"const moment = require('moment');",
@@ -504,7 +489,6 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "4587858c-324a-4805-92ad-af15088dae88",
 										"exec": [
 											"const moment = require('moment');",
 											"pm.globals.set(\"timestamp_start\", moment().subtract(2, 'seconds').toISOString());",
@@ -517,7 +501,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "8d1dfba7-b86c-43e4-8999-712abd0857f7",
 										"exec": [
 											"tests[\"Status code is 200\"] = responseCode.code === 200;",
 											"",
@@ -572,7 +555,6 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "57b75872-0086-4616-9236-56422aab64bd",
 										"exec": [
 											"const moment = require('moment');",
 											"pm.globals.set(\"timestamp_end\", moment().add(5, 'minutes').toISOString());",
@@ -584,7 +566,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "b9c68ba9-32bb-4238-bc27-e7af7f48716a",
 										"exec": [
 											"tests[\"Status code is 200\"] = responseCode.code === 200;",
 											"",
@@ -640,7 +621,6 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "62df6c65-15bb-4bbc-aff8-3d1374104f92",
 										"exec": [
 											""
 										],
@@ -650,7 +630,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "9af0f8ad-4e52-4917-ba55-889404bb6b61",
 										"exec": [
 											""
 										],
@@ -687,12 +666,9 @@
 							},
 							"response": []
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					]
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Strategic conflict detection",
@@ -706,7 +682,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "ef27a9ec-f59e-4099-a0be-288e50fce2de",
 										"exec": [
 											"var data = JSON.parse(responseBody);",
 											"postman.setEnvironmentVariable(\"strategic_coordination_access_token\", data.access_token);",
@@ -757,7 +732,6 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "d5e82267-4dd6-4d25-9052-31f3aec6bb8d",
 										"exec": [
 											"postman.setEnvironmentVariable(\"area\", \"19.4763,-155.6043,19.4884,-155.5746,19.4516,-155.5941\");",
 											"const moment = require('moment');",
@@ -811,7 +785,6 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "0bce86bb-89d5-4cf3-aff8-01b5d19e5d6f",
 										"exec": [
 											"const moment = require('moment');",
 											"pm.globals.set(\"timestamp_start\", moment().subtract(2, 'seconds').toISOString());",
@@ -824,7 +797,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "c8545c8a-a063-42fd-b817-d9f1fa5a6e76",
 										"exec": [
 											"tests[\"Status code is 200\"] = responseCode.code === 200;",
 											"",
@@ -860,14 +832,14 @@
 									}
 								},
 								"url": {
-									"raw": "{{dss_base_url}}/dss/v1/operation_references/df34b07c-b3bd-4bcc-8570-6a5d724b46d5",
+									"raw": "{{dss_base_url}}/dss/v1/operational_intent_references/df34b07c-b3bd-4bcc-8570-6a5d724b46d5",
 									"host": [
 										"{{dss_base_url}}"
 									],
 									"path": [
 										"dss",
 										"v1",
-										"operation_references",
+										"operational_intent_references",
 										"df34b07c-b3bd-4bcc-8570-6a5d724b46d5"
 									]
 								}
@@ -880,7 +852,6 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "686d103b-265b-4578-927e-116589f94233",
 										"exec": [
 											"const moment = require('moment');",
 											"pm.globals.set(\"timestamp_start\", moment().subtract(2, 'seconds').toISOString());",
@@ -893,7 +864,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "ffa195ce-445e-4503-b322-99e7012b2126",
 										"exec": [
 											"tests[\"Status code is 200\"] = responseCode.code === 200;",
 											"",
@@ -928,14 +898,14 @@
 									}
 								},
 								"url": {
-									"raw": "{{dss_base_url}}/dss/v1/operation_references/df34b07c-b3bd-4bcc-8570-6a5d724b46d5",
+									"raw": "{{dss_base_url}}/dss/v1/operational_intent_references/df34b07c-b3bd-4bcc-8570-6a5d724b46d5",
 									"host": [
 										"{{dss_base_url}}"
 									],
 									"path": [
 										"dss",
 										"v1",
-										"operation_references",
+										"operational_intent_references",
 										"df34b07c-b3bd-4bcc-8570-6a5d724b46d5"
 									]
 								}
@@ -948,7 +918,6 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "fa4d1d15-d6fc-46cf-8e8e-0f461b8875db",
 										"exec": [
 											""
 										],
@@ -958,7 +927,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "34e79e8c-129a-46bb-85a7-7c078e82508d",
 										"exec": [
 											""
 										],
@@ -980,14 +948,14 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{dss_base_url}}/dss/v1/operation_references/df34b07c-b3bd-4bcc-8570-6a5d724b46d5",
+									"raw": "{{dss_base_url}}/dss/v1/operational_intent_references/df34b07c-b3bd-4bcc-8570-6a5d724b46d5",
 									"host": [
 										"{{dss_base_url}}"
 									],
 									"path": [
 										"dss",
 										"v1",
-										"operation_references",
+										"operational_intent_references",
 										"df34b07c-b3bd-4bcc-8570-6a5d724b46d5"
 									]
 								}
@@ -999,7 +967,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "458ba1d6-4694-4174-8cb1-ecb1c90f4d88",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -1009,19 +976,336 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "bc8519db-4941-44c4-981b-7f2555e1c5f2",
 								"type": "text/javascript",
 								"exec": [
 									""
 								]
 							}
 						}
+					]
+				},
+				{
+					"name": "Constraint cycle",
+					"item": [
+						{
+							"name": "Get strategic coordination token from dummy OAuth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var data = JSON.parse(responseBody);",
+											"postman.setEnvironmentVariable(\"strategic_coordination_access_token\", data.access_token);",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/token?grant_type=client_credentials&scope=utm.constraint_management&intended_audience=localhost&issuer=localhost",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"token"
+									],
+									"query": [
+										{
+											"key": "grant_type",
+											"value": "client_credentials"
+										},
+										{
+											"key": "scope",
+											"value": "utm.constraint_management"
+										},
+										{
+											"key": "intended_audience",
+											"value": "localhost"
+										},
+										{
+											"key": "issuer",
+											"value": "localhost"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Query Constraints",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"postman.setEnvironmentVariable(\"area\", \"19.4763,-155.6043,19.4884,-155.5746,19.4516,-155.5941\");",
+											"const moment = require('moment');",
+											"pm.globals.set(\"timestamp_now\", moment().toISOString());",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{constraint_management_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"area_of_interest\": {\n    \"volume\": {\n      \"outline_polygon\": {\n        \"vertices\": [\n          {\n            \"lng\": -155.6043,\n            \"lat\": 19.4763\n          },\n          {\n            \"lng\": -155.5746,\n            \"lat\": 19.4884\n          },\n          {\n            \"lng\": -155.5941,\n            \"lat\": 19.4516\n          }\n        ]\n      },\n      \"altitude_lower\": {\n        \"value\": -8000,\n        \"reference\": \"W84\",\n        \"units\": \"M\"\n        },\n        \"altitude_upper\": {\n        \"value\": -8000,\n        \"reference\": \"W84\",\n        \"units\": \"M\"\n        }\n    },\n    \"time_start\": {\n    \t\"value\": \"{{timestamp_start}}\",\n    \t\"format\": \"RFC3339\"\n    },\n    \"time_end\": {\n    \t\"value\": \"{{timestamp_end}}\",\n    \t\"format\": \"RFC3339\"\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dss_base_url}}/dss/v1/constraint_references/query",
+									"host": [
+										"{{dss_base_url}}"
+									],
+									"path": [
+										"dss",
+										"v1",
+										"constraint_references",
+										"query"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Constraint (new)",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"const moment = require('moment');",
+											"pm.environment.set(\"timestamp_start\", moment().subtract(2, 'seconds').toISOString());",
+											"pm.environment.set(\"timestamp_end\", moment().add(5, 'minutes').toISOString());",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;",
+											"",
+											"var data = JSON.parse(responseBody);",
+											"pm.environment.set(\"constraint_version\", data.constraint_reference.version);",
+											"pm.environment.set(\"constraint_subscription_id\", data.constraint_reference.subscription_id)",
+											"pm.environment.set(\"constraint_ovn\", data.constraint_reference.ovn)",
+											"pm.environment.set(\"constraint_id\", data.constraint_reference.id);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{constraint_management_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"extents\": [{\n    \"volume\": {\n      \"outline_polygon\": {\n        \"vertices\": [\n          {\n            \"lng\": -155.6043,\n            \"lat\": 19.4763\n          },\n          {\n            \"lng\": -155.5746,\n            \"lat\": 19.4884\n          },\n          {\n            \"lng\": -155.5941,\n            \"lat\": 19.4516\n          }\n        ]\n      },\n      \"altitude_lower\": {\n        \"value\": -8000,\n        \"reference\": \"W84\",\n        \"units\": \"M\"\n        },\n        \"altitude_upper\": {\n        \"value\": -8000,\n        \"reference\": \"W84\",\n        \"units\": \"M\"\n        }\n    },\n    \"time_start\": {\n    \t\"value\": \"{{timestamp_start}}\",\n    \t\"format\": \"RFC3339\"\n    },\n    \"time_end\": {\n    \t\"value\": \"{{timestamp_end}}\",\n    \t\"format\": \"RFC3339\"\n    }\n  }],\n  \"uss_base_url\": \"https://example.com\",\n  \"state\": \"Accepted\",\n  \"new_subscription\": {\n  \t\"uss_base_url\": \"https://example.com\"\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dss_base_url}}/dss/v1/constraint_references/{{$guid}}",
+									"host": [
+										"{{dss_base_url}}"
+									],
+									"path": [
+										"dss",
+										"v1",
+										"constraint_references",
+										"{{$guid}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Constraint (update)",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"const moment = require('moment');",
+											"pm.globals.set(\"timestamp_start\", moment().subtract(2, 'seconds').toISOString());",
+											"pm.globals.set(\"timestamp_end\", moment().add(5, 'minutes').toISOString());",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;",
+											"",
+											"var data = JSON.parse(responseBody);",
+											"pm.environment.set(\"constraint_version\", data.constraint_reference.version);",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{constraint_management_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"old_version\": {{constraint_version}},\n  \"key\": [\"{{constraint_ovn}}\"],\n  \"extents\": [{\n    \"volume\": {\n      \"outline_polygon\": {\n        \"vertices\": [\n          {\n            \"lng\": -155.6043,\n            \"lat\": 19.4763\n          },\n          {\n            \"lng\": -155.5746,\n            \"lat\": 19.4884\n          },\n          {\n            \"lng\": -155.5941,\n            \"lat\": 19.4516\n          }\n        ]\n      },\n      \"altitude_lower\": {\n        \"value\": -8000,\n        \"reference\": \"W84\",\n        \"units\": \"M\"\n        },\n        \"altitude_upper\": {\n        \"value\": -8000,\n        \"reference\": \"W84\",\n        \"units\": \"M\"\n        }\n    },\n    \"time_start\": {\n    \t\"value\": \"{{timestamp_start}}\",\n    \t\"format\": \"RFC3339\"\n    },\n    \"time_end\": {\n    \t\"value\": \"{{timestamp_end}}\",\n    \t\"format\": \"RFC3339\"\n    }\n  }],\n  \"uss_base_url\": \"https://example.com\",\n  \"state\": \"Activated\",\n  \"subscription_id\": \"{{constraint_subscription_id}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dss_base_url}}/dss/v1/constraint_references/{{constraint_id}}",
+									"host": [
+										"{{dss_base_url}}"
+									],
+									"path": [
+										"dss",
+										"v1",
+										"constraint_references",
+										"{{constraint_id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Constraint",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{constraint_management_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{dss_base_url}}/dss/v1/constraint_references/{{constraint_id}}",
+									"host": [
+										"{{dss_base_url}}"
+									],
+									"path": [
+										"dss",
+										"v1",
+										"constraint_references",
+										"{{constraint_id}}"
+									]
+								}
+							},
+							"response": []
+						}
 					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Aux",
@@ -1113,8 +1397,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Set http://localhost:8082 as base URL",
@@ -1122,7 +1405,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "14567dba-c575-437c-8a75-cd152cd1c1bc",
 						"exec": [
 							"postman.setEnvironmentVariable(\"dss_base_url\", \"http://localhost:8082\");"
 						],
@@ -1147,6 +1429,5 @@
 			},
 			"response": []
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
