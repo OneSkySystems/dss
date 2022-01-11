@@ -135,3 +135,27 @@ Please review the disaster-recovery page for cockroachdb for background on what 
 2. Locate the damaged node ID and execute the following command `./cockroach node decommission <damaged-node-id-integer> --certs-dir=/cockroach/cockroach-certs/`
 
 3. Once this is finished executing (you can verify this through the CockroachDB UI mentioned above), you can re-execute `tk apply .` in the workspace/\<context> directory to trigger an reconfigure of cockroachDB.
+
+#### Run with multiple --join hosts
+A new field has been added to the cockroach jsonnet file called `initialJoinHosts`, this allows the user to specify a collection of initial nodes as opposed to just `'cockroachdb-0.cockroachdb'`. Specifying three nodes as opposed to just the 1 should allow the cluster to survive one pod outage at any given time.
+
+## Deploy DSS instance to local minikube
+
+1. [Install minikube](https://minikube.sigs.k8s.io/docs/start/)
+
+2. Image pull policy field must be set to `Never` for the following files:<br>
+  a. `base.libsonnet -> Container(name)`<br>
+  b. `grpc-backend.libsonnet -> base.Container('grpc-backend')`
+
+3. After executing `run_locally.sh`, a collection of docker images should have been built into your local registry. To add them to minikube, please run the following:<br>
+  a. `minikube cache add interuss-local/db-manager:latest`<br>
+  b. `minikube cache add interuss-local/dummy-oauth:latest`<br>
+  c. `minikube cache add interuss-local/dss:latest`
+
+4. Any libsonnet files containing `gp2` as a `storageClassName` must be changed to `standard`
+
+5. Run the following command: `minikube start --kubernetes-version v1.21.1 --cpus 2 --memory 2048`. Due to some of the Kubernetes resource versions found in the manifests, the `kubernetes-version` currently cannot be greater than `1.21.x`.
+
+6. Once the minikube cluster has started, locate your API server's URL in your new kubeconfig. This will need to be included in the `apiServer` field in the `spec.json`
+
+7. Enjoy! If you want to interact with the DSS on your local machine, run this command to expose the http-gateway pods: `minikube service --url http-gateway`. The output of this command will show you which port you need to target on your localhost to access the service.

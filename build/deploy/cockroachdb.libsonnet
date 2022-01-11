@@ -84,7 +84,9 @@ local volumes = import 'volumes.libsonnet';
               'advertise-addr': if metadata.single_cluster
                   then '$(hostname -f)'
                   else '${HOSTNAME##*-}.' + metadata.cockroach.hostnameSuffix,
-              join: std.join(',', ['cockroachdb-0.cockroachdb'] + 
+              // Check for the presence of 'metadata.cockroach.initialJoinHosts'
+              // If we don't define it in our workspace, then fall back to the default interuss/dss behavior of just relying on ['cockroachdb-0.cockroachdb']
+              join: std.join(',', if std.objectHas(metadata.cockroach, 'initialJoinHosts') then metadata.cockroach.initialJoinHosts else ['cockroachdb-0.cockroachdb'] +
                 if metadata.single_cluster then [] else metadata.cockroach.JoinExisting),
               logtostderr: true,
               locality: 'zone=' + metadata.cockroach.locality,
