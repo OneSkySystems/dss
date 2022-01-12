@@ -139,6 +139,9 @@ Please review the disaster-recovery page for cockroachdb for background on what 
 #### Run with multiple --join hosts
 A new field has been added to the cockroach jsonnet file called `initialJoinHosts`, this allows the user to specify a collection of initial nodes as opposed to just `'cockroachdb-0.cockroachdb'`. Specifying three nodes as opposed to just the 1 should allow the cluster to survive one pod outage at any given time.
 
+#### Specifying a host prefix
+`hostnamePrefix` has been added as an optional property to cockroachdb.
+
 ## Deploy DSS instance to local minikube
 
 1. [Install minikube](https://minikube.sigs.k8s.io/docs/start/)
@@ -147,10 +150,11 @@ A new field has been added to the cockroach jsonnet file called `initialJoinHost
   a. `base.libsonnet -> Container(name)`<br>
   b. `grpc-backend.libsonnet -> base.Container('grpc-backend')`
 
-3. After executing `run_locally.sh`, a collection of docker images should have been built into your local registry. To add them to minikube, please run the following:<br>
-  a. `minikube cache add interuss-local/db-manager:latest`<br>
-  b. `minikube cache add interuss-local/dummy-oauth:latest`<br>
-  c. `minikube cache add interuss-local/dss:latest`
+3. After executing `build/build.sh`, a collection of docker images should have been built into your local registry. To add them to minikube, please run the following:<br>
+  a. `minikube image load interuss-local/db-manager:latest`<br>
+  b. `minikube image load interuss-local/dummy-oauth:latest`<br>
+  c. `minikube image load interuss-local/dss:latest`<br>
+  d. `minikube image load cockroachdb/cockroach:v20.2.0`
 
 4. Any libsonnet files containing `gp2` as a `storageClassName` must be changed to `standard`
 
