@@ -81,9 +81,12 @@ local volumes = import 'volumes.libsonnet';
             ],
             command_args_:: {
               'certs-dir': '/cockroach/cockroach-certs',
+              // Check for the presence of 'metadata.cockroach.hostnamePrefix' for advertise-addr
+              // If we don't define it in our workspace, then fall back to the default interuss/dss behavior with no hostname prefix
               'advertise-addr': if metadata.single_cluster
                   then '$(hostname -f)'
-                  else '${HOSTNAME##*-}.' + metadata.cockroach.hostnameSuffix,
+                  else if std.objectHas(metadata.cockroach, 'hostnamePrefix')
+                    then metadata.cockroach.hostnamePrefix + '${HOSTNAME##*-}.' + metadata.cockroach.hostnameSuffix else '${HOSTNAME##*-}.' + metadata.cockroach.hostnameSuffix,
               // Check for the presence of 'metadata.cockroach.initialJoinHosts'
               // If we don't define it in our workspace, then fall back to the default interuss/dss behavior of just relying on ['cockroachdb-0.cockroachdb']
               join: std.join(',', if std.objectHas(metadata.cockroach, 'initialJoinHosts') then metadata.cockroach.initialJoinHosts else ['cockroachdb-0.cockroachdb'] +
