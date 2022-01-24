@@ -12,7 +12,9 @@ local metadata = metadataBase {
   // enableScd - enables strategic conflict detection functionality (currently R&D) - UTM Workflow Endpoints Operation/Constraints
   enableScd: true, // <-- This boolean value is VAR_ENABLE_SCD
   cockroach+: {
-    hostnameSuffix: 'cockroach.dss-ohio.oneskysystems.com',
+    hostnamePrefix: 'cockroachdb-',
+    hostnameSuffix: 'cockroachdb',
+    initialJoinHosts: ['cockroachdb-0.cockroachdb', 'cockroachdb-1.cockroachdb', 'cockroachdb-2.cockroachdb'],
     locality: 'onesky_dss-ohio',
     nodeIPs: ['193.168.126.127', '193.168.45.104', '193.168.75.8'],
     shouldInit: true, // <-- This boolean value is VAR_SHOULD_INIT, set this to false unless creating the first DSS instance
@@ -35,7 +37,7 @@ local metadata = metadataBase {
   schema_manager+: {
     image: '169922227793.dkr.ecr.us-east-2.amazonaws.com/onesky/db-manager:2021-02-03-4c5e457',
     desired_rid_db_version: '3.1.1',
-    desired_scd_db_version: '1.0.0',
+    desired_scd_db_version: '3.0.0',
   },
 };
 
