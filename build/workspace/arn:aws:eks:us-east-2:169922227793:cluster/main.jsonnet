@@ -23,19 +23,19 @@ local metadata = metadataBase {
   },
   gateway+: {
     ipName: 'onesky-dss-ingress',
-    image: '169922227793.dkr.ecr.us-east-2.amazonaws.com/onesky/dss:2021-02-03-4c5e457',
+    image: '169922227793.dkr.ecr.us-east-2.amazonaws.com/onesky/dss-oh-three-one-seven:latest',
     hostname: 'dss-ohio.oneskysystems.com',
     traceRequests: true,
   },
   backend+: {
-    image: '169922227793.dkr.ecr.us-east-2.amazonaws.com/onesky/dss:2021-02-03-4c5e457',
+    image: '169922227793.dkr.ecr.us-east-2.amazonaws.com/onesky/dss-oh-three-one-seven:latest',
     // Provide a blank string for pubKeys if we're using JWKS (which we ought to be)
     pubKeys: [''],
     jwksEndpoint: 'https://devlogin.onesky.xyz/auth/realms/dss/protocol/openid-connect/certs',
     jwksKeyIds: ['GdXw6PWjFdEtQqrFn4_K_1wdVveH7yhADldApxKQGjM'],
   },
   schema_manager+: {
-    image: '169922227793.dkr.ecr.us-east-2.amazonaws.com/onesky/db-manager:2021-02-03-4c5e457',
+    image: '169922227793.dkr.ecr.us-east-2.amazonaws.com/onesky/db-manager-oh-three-one-seven:latest',
     desired_rid_db_version: '3.1.1',
     desired_scd_db_version: '3.0.0',
   },
