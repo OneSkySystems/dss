@@ -15,11 +15,16 @@ import (
 const (
 	// DefaultMinimumCellLevel is the default minimum cell level, chosen such
 	// that the minimum cell size is ~1km^2.
-	DefaultMinimumCellLevel = 13
+	// DefaultMinimumCellLevel = 13
 	// DefaultMaximumCellLevel is the default minimum cell level, chosen such
 	// that the maximum cell size is ~1km^2.
-	DefaultMaximumCellLevel = 13
-	maxAllowedAreaKm2       = 2500.0
+	// DefaultMaximumCellLevel = 13
+	// maxAllowedAreaKm2       = 2500.0
+
+	// Adjusted for Easier testing across nations
+	DefaultMinimumCellLevel = 10
+	DefaultMaximumCellLevel = 10
+	maxAllowedAreaKm2       = 500000000.0
 	radiusEarthMeter        = 6371010.0
 
 	earthAreaKm2 = 510072000.0 // rough area of the earth in KM².
