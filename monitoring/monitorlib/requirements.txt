@@ -1,5 +1,5 @@
 arrow==1.1.0
-cryptography==3.3.2
+cryptography==41.0.2
 flask==1.1.2
 google-auth==1.6.3
 jwcrypto==0.7
