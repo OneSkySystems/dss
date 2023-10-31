@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: onesky-http-gateway-ingress
@@ -10,14 +10,16 @@ metadata:
 spec:
   tls:
     - hosts:
-        - dss-ohio.oneskysystems.com
+        - dss-navcanada.oneskysystems.com
       secretName: dss-tls
   rules:
-    - host: dss-ohio.oneskysystems.com
+    - host: dss-navcanada.oneskysystems.com
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
-              serviceName: "http-gateway"
-              servicePort: 8080
+              service:
+                name: "http-gateway"
+                port: 
+                  number: 8080

@@ -7,14 +7,13 @@ local util = import 'util.libsonnet';
     metadata: {
       name: name,
       namespace: metadata.namespace,
-      clusterName: metadata.clusterName,
       labels: { 
         name: std.join('-', std.split(name, ':')),
       },
     },
   },
 
-  _RoleRelated(kind, metadata, name): $._Object('rbac.authorization.k8s.io/v1beta1', kind, metadata, name) {
+  _RoleRelated(kind, metadata, name): $._Object('rbac.authorization.k8s.io/v1', kind, metadata, name) {
     local rr = self,
     app:: "",
     metadata+: {
@@ -54,7 +53,7 @@ local util = import 'util.libsonnet';
 
   },
 
-  PodDisruptionBudget(metadata, name): $._Object('policy/v1beta1', 'PodDisruptionBudget', metadata, name) {
+  PodDisruptionBudget(metadata, name): $._Object('policy/v1', 'PodDisruptionBudget', metadata, name) {
     local pdb = self,
     app:: error "must specify app",
     metadata+: {

@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: onesky-grafana-ingress
@@ -11,14 +11,16 @@ metadata:
 spec:
   tls:
     - hosts:
-        - dss-ohio.oneskysystems.com
+        - dss-navcanada.oneskysystems.com
       secretName: dss-tls
   rules:
-    - host: dss-ohio.oneskysystems.com
+    - host: dss-navcanada.oneskysystems.com
       http:
         paths:
           - path: /grafana(/|$)(.*)
             pathType: Prefix
             backend:
-              serviceName: "grafana"
-              servicePort: 3000
+              service:
+                name: "grafana"
+                port:
+                  number: 3000
