@@ -1,0 +1,3 @@
+# Default reviewers for every PR in this repository.
+# Last matching pattern wins: repeat these owners on any path-specific line added below.
+*       @StevenPG @kteneyck @ZachHubbs @Tyler-Cav
